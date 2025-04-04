@@ -1,187 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NerdHelp - Serviços</title>
-    <link rel="icon" type="image/png" href="inicial/eu.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NerdHelp - Serviços</title>
+  <link rel="icon" type="image/png" href="inicial/eu.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
 
-        header {
-            background-color: #1e293b;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
 
-        .logo {
-            height: 50px;
-        }
+    .logo {
+      height: 50px;
+    }
 
-        nav {
-            display: flex;
-            gap: 20px;
-        }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    nav a,
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav a:hover,
+    .mobile-menu a:hover {
+      text-decoration: underline;
+    }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-        }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
 
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            right: 20px;
-            background-color: #1e293b;
-            padding: 15px;
-            border-radius: 8px;
-            z-index: 10;
-        }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
 
-        .mobile-menu a {
-            margin: 10px 0;
-        }
+    .mobile-menu a {
+      padding: 10px 0;
+      text-align: center;
+    }
 
-        .container {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+    .mobile-menu.show {
+      display: flex;
+    }
 
-        .service {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .service h2 {
-            color: #1e293b;
-        }
+    .service {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        footer {
-            background-color: #1e293b;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
+    .service h2 {
+      color: #1e293b;
+    }
 
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
+    footer {
+      background-color: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
 
-            .hamburger {
-                display: flex;
-            }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
 
-            .mobile-menu.show {
-                display: flex;
-            }
-        }
-    </style>
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <img src="banana.png" alt="Logo NerdHelp" class="logo">
-        
-        <nav>
-            <a href="https://kauan-turra.github.io/inicial/">Início</a>
-            <a href="https://kauan-turra.github.io/servi-os/">Serviços</a>
-            <a href="https://kauan-turra.github.io/portfolio/">Portfólio</a>
-            <a href="https://kauan-turra.github.io/contato/">Contato</a>
-        </nav>
+  <header>
+    <img src="banana.png" alt="Logo NerdHelp" class="logo" />
+    
+    <nav>
+      <a href="https://kauan-turra.github.io/inicial/">Início</a>
+      <a href="https://kauan-turra.github.io/servi-os/">Serviços</a>
+      <a href="https://kauan-turra.github.io/portfolio/">Portfólio</a>
+      <a href="https://kauan-turra.github.io/contato/">Contato</a>
+    </nav>
 
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="https://kauan-turra.github.io/inicial/">Início</a>
-            <a href="https://kauan-turra.github.io/servi-os/">Serviços</a>
-            <a href="https://kauan-turra.github.io/portfolio/">Portfólio</a>
-            <a href="https://kauan-turra.github.io/contato/">Contato</a>
-        </div>
-    </header>
-
-    <div class="container">
-        <h1>Serviços</h1>
-        
-        <div class="service">
-            <h2>Criação de Sites</h2>
-            <p>Desenvolvemos sites modernos, responsivos e otimizados para qualquer dispositivo. Seja para um negócio, blog ou portfólio, entregamos um design profissional e funcional.</p>
-        </div>
-        
-        <div class="service">
-            <h2>Manutenção e Formatação de Computadores</h2>
-            <p>Realizamos diagnósticos, limpeza de sistema, substituição de peças e formatação completa para melhorar o desempenho do seu PC.</p>
-        </div>
-        
-        <div class="service">
-            <h2>Instalação de Windows e Drivers</h2>
-            <p>Instalamos e configuramos o Windows com os drivers necessários para garantir a melhor performance do seu computador.</p>
-        </div>
-        
-        <div class="service">
-            <h2>Criação de Aplicativos Web</h2>
-            <p>Desenvolvemos aplicativos web personalizados, focados na experiência do usuário e integração eficiente com bancos de dados e outras plataformas.</p>
-        </div>
-        
-        <div class="service">
-            <h2>Remoção de Vírus e Otimização</h2>
-            <p>Removemos vírus, malware e outros programas indesejados, garantindo mais segurança e velocidade para o seu sistema.</p>
-        </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
 
-    <footer>
-        © 2025 NerdHelp. Todos os direitos reservados.
-    </footer>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://kauan-turra.github.io/inicial/">Início</a>
+      <a href="https://kauan-turra.github.io/servi-os/">Serviços</a>
+      <a href="https://kauan-turra.github.io/portfolio/">Portfólio</a>
+      <a href="https://kauan-turra.github.io/contato/">Contato</a>
+    </div>
+  </header>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("mobileMenu");
-            menu.classList.toggle("show");
-        }
-    </script>
+  <div class="container">
+    <h1>Serviços</h1>
+    
+    <div class="service">
+      <h2>Criação de Sites</h2>
+      <p>Desenvolvemos sites modernos, responsivos e otimizados para qualquer dispositivo. Seja para um negócio, blog ou portfólio, entregamos um design profissional e funcional.</p>
+    </div>
+    
+    <div class="service">
+      <h2>Manutenção e Formatação de Computadores</h2>
+      <p>Realizamos diagnósticos, limpeza de sistema, substituição de peças e formatação completa para melhorar o desempenho do seu PC.</p>
+    </div>
+    
+    <div class="service">
+      <h2>Instalação de Windows e Drivers</h2>
+      <p>Instalamos e configuramos o Windows com os drivers necessários para garantir a melhor performance do seu computador.</p>
+    </div>
+    
+    <div class="service">
+      <h2>Criação de Aplicativos Web</h2>
+      <p>Desenvolvemos aplicativos web personalizados, focados na experiência do usuário e integração eficiente com bancos de dados e outras plataformas.</p>
+    </div>
+    
+    <div class="service">
+      <h2>Remoção de Vírus e Otimização</h2>
+      <p>Removemos vírus, malware e outros programas indesejados, garantindo mais segurança e velocidade para o seu sistema.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 NerdHelp. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
