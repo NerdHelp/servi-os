@@ -21,20 +21,25 @@
         header {
             background-color: #1e293b;
             color: white;
-            padding: 20px 40px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
             height: 50px;
         }
 
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
             font-weight: bold;
         }
 
@@ -42,8 +47,37 @@
             text-decoration: underline;
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 20px;
+            background-color: #1e293b;
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 10;
+        }
+
+        .mobile-menu a {
+            margin: 10px 0;
+        }
+
         .container {
-            padding: 40px;
+            padding: 40px 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -65,25 +99,48 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
             margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div>
-            <img src="banana.png" alt="Logo NerdHelp" class="logo">
-        </div>
+        <img src="banana.png" alt="Logo NerdHelp" class="logo">
+        
         <nav>
             <a href="https://kauan-turra.github.io/inicial/">Início</a>
             <a href="https://kauan-turra.github.io/servi-os/">Serviços</a>
             <a href="https://kauan-turra.github.io/portfolio/">Portfólio</a>
             <a href="https://kauan-turra.github.io/contato/">Contato</a>
         </nav>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="https://kauan-turra.github.io/inicial/">Início</a>
+            <a href="https://kauan-turra.github.io/servi-os/">Serviços</a>
+            <a href="https://kauan-turra.github.io/portfolio/">Portfólio</a>
+            <a href="https://kauan-turra.github.io/contato/">Contato</a>
+        </div>
     </header>
 
     <div class="container">
@@ -118,6 +175,13 @@
     <footer>
         © 2025 NerdHelp. Todos os direitos reservados.
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("show");
+        }
+    </script>
 
 </body>
 </html>
